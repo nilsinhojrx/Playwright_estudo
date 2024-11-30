@@ -8,6 +8,9 @@ with sync_playwright() as p:
     context = p.chromium.launch_persistent_context(
         # user_data_dir : pasta onde fica os dados de usuário do Google Chrome
         # No Windows é: C:\\Users\\Seu usuário\\AppData\\Local\\Google\\Chrome\\User Data
+        # Importante utilizar duas barras, para que o Python entenda como uma string completa.
+        # Outra maneira seria utilizar apenas uma barra e colocar um r antes da string:
+        # user_data_dir = r"C:\Users\Seu usuário\AppData\Local\Google\Chrome\User Data"
             user_data_dir= "",
             executable_path=chrome_path,
             channel="chrome",
